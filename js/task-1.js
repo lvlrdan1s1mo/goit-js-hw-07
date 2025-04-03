@@ -1,10 +1,11 @@
-// 1 zadanie
-const categories = document.querySelectorAll("ul#categories .item");
-console.log("кількість категорій:", categories.length);
-// 2 zadanie
-categories.forEach(category => {
-const title = category.querySelector("h2").textContent;
-const ul_li = category.querySelectorAll("ul li").length;
-console.log(`категория ${title}`);
-console.log(`килькисть элементив: ${ul_li}`);
+const categoriesList = document.querySelector('#categories');
+const categoryItems = categoriesList.querySelectorAll('.item');
+
+console.log(`Number of categories: ${categoryItems.length}`);
+
+categoryItems.forEach(category => {
+    const title = category.querySelector('h2').textContent;
+    const itemsCount = category.querySelectorAll('ul li').length;
+    console.log(`Category: ${title}`);
+    console.log(`Elements: ${itemsCount}`);
 });

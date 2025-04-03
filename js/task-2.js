@@ -25,8 +25,18 @@ const images = [
   }
 ];
 const gallery = document.querySelector(".gallery");
-const list = images
-.map((image) => `<li><img ${image}></li>`)
-.join("");
 
-gallery.innerHTML = list;
+gallery.style.display = "flex";
+gallery.style.flexWrap = "wrap";
+gallery.style.gap = "10px";
+gallery.style.listStyle = "none";
+
+gallery.insertAdjacentHTML(
+  "beforeend",
+  images
+    .map(
+      ({ url, alt }) =>
+        `<li><img src="${url}" alt="${alt}" width="300" height="200"></li>`
+    )
+    .join("")
+);
